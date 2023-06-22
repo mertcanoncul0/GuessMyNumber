@@ -84,11 +84,13 @@ function againAction() {
 checkBtn.addEventListener('click', checkAction);
 againBtn.addEventListener('click', againAction);
 
-/// * Keydown
-document.querySelector('.guess').addEventListener('keydown', function (e) {
+function keyDownAction(e) {
   if (e.key === 'Enter') {
     checkAction();
   } else if (e.key === 'Escape') {
     againAction();
   }
-});
+}
+
+/// * Keydown
+document.querySelector('.guess').addEventListener('keydown', keyDownAction);
