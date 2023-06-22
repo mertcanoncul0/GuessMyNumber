@@ -77,5 +77,16 @@ function againAction() {
   randomNumber = Math.trunc(Math.random() * 20) + 1;
 }
 
+// * Event Listeners
+/// * Click
 checkBtn.addEventListener('click', checkAction);
 againBtn.addEventListener('click', againAction);
+
+/// * Keydown
+document.querySelector('.guess').addEventListener('keydown', function (e) {
+  if (e.key === 'Enter') {
+    checkAction();
+  } else if (e.key === 'Escape') {
+    againAction();
+  }
+});
