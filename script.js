@@ -57,6 +57,8 @@ function checkAction() {
       document.querySelector('.score').textContent = score;
     } else {
       displayMessage('Your lose');
+      document.querySelector('body').style.background =
+        'hsl(0deg 77.1% 47.21%)';
     }
   }
 }
