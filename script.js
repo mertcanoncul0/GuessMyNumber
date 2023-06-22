@@ -5,7 +5,6 @@ const checkBtn = document.querySelector('.check');
 const againBtn = document.querySelector('.game-again');
 
 // * Fields
-let message = document.querySelector('.message');
 let guessField = document.querySelector('.guess-placeholder');
 
 // * Random Number
@@ -15,7 +14,9 @@ let randomNumber = Math.trunc(Math.random() * 20) + 1;
 let highScore = 0;
 let score = 20;
 
-console.log(randomNumber);
+function displayMessage(message) {
+  document.querySelector('.message').textContent = message;
+}
 
 function checkAction() {
   // * Guess
@@ -23,13 +24,13 @@ function checkAction() {
 
   // * Guess field is empty
   if (!guessNumber) {
-    message.textContent = 'Guess field is empty';
+    displayMessage('Guess field is empty');
     document.querySelector('.guess').focus();
 
     // * Guess is true
   } else if (guessNumber === randomNumber) {
     // * Change fields for wins
-    message.textContent = '🎉 Guess is true';
+    displayMessage('🎉 Guess is true');
     guessField.textContent = guessNumber;
 
     // * Change Styles for wins
@@ -44,43 +45,36 @@ function checkAction() {
       highScore = score;
       document.querySelector('.highscore').textContent = highScore;
     }
+
     // * Guess is wrong
-  } else if (guessNumber > randomNumber) {
+  } else if (guessNumber !== randomNumber) {
     if (score > 1) {
       // * Guess Feedback
-      message.textContent = 'Too high';
+      displayMessage(guessNumber > randomNumber ? 'Too high' : 'Too Low');
 
-      // * Score --
+      // * Score Down
       score--;
       document.querySelector('.score').textContent = score;
     } else {
-      message.textContent = 'Your lose';
-    }
-  } else if (guessNumber < randomNumber) {
-    if (score > 1) {
-      // * Guess Feedback
-      message.textContent = 'Too Low';
-
-      // * Score --
-      score--;
-      document.querySelector('.score').textContent = score;
-    } else {
-      message.textContent = 'Your lose';
+      displayMessage('Your lose');
     }
   }
 }
 
 function againAction() {
   // * Restore Fields
-  message.textContent = 'Start guessing...';
+  displayMessage('Start guessing...');
   guessField.textContent = '?';
+  score = 20;
+  document.querySelector('.score').textContent = score;
 
+  // * Restore Styles
   document.querySelector('body').style.background = 'hsl(0deg 0% 13.33%)';
   document.querySelector('.guess').value = '';
   document.querySelector('.guess').focus();
 
-  score = 20;
-  document.querySelector('.score').textContent = score;
+  // * Again Random Number
+  randomNumber = Math.trunc(Math.random() * 20) + 1;
 }
 
 checkBtn.addEventListener('click', checkAction);
