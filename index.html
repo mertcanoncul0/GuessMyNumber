@@ -13,32 +13,34 @@
       rel="stylesheet" />
 
     <!-- * Asset Links -->
-    <link rel="stylesheet" href="main.css" />
-    <script src="main.css" defer></script>
+    <link rel="stylesheet" href="main.css"/>
+    <script src="main.js" defer></script>
   </head>
   <body>
     <!-- * Header -->
     <header class="header">
       <seciton class="header-top">
-        <button class="btn game-again" href="#">Again!</button>
+        <button class="btn game-again" href="#" data-again-btn>Again!</button>
         <p class="game-rules">(Between 1 and 20)</p>
       </seciton>
 
       <h1 class="header-head">Guess My Number!</h1>
-      <span class="guess-placeholder">?</span>
+      <span class="guess-placeholder" data-guess-placeholder>?</span>
     </header>
 
     <!-- * Main -->
     <main>
       <section class="left">
-        <input type="Number" class="guess" />
-        <button class="btn check">Check!</button>
+        <form data-check-form>
+          <input type="Number" class="guess" data-player-guess/>
+          <button class="btn check" type="submit">Check!</button>
+        </form>
       </section>
       <section class="right">
-        <p class="message">Start guessing...</p>
-        <p class="label-score">💯 Score: <span class="score">20</span></p>
-        <p class="label-highscore">
-          🥇 Highscore: <span class="highscore">0</span>
+        <p class="message" data-display-message>Start guessing...</p>
+        <p class="label-score">💯 Score: <span class="score" data-player-score>20</span></p>
+        <p class="label-highscore"> 
+          🥇 Highscore: <span class="highscore" data-player-high-score>0</span>
         </p>
       </section>
     </main>

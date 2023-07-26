@@ -166,3 +166,21 @@ main .right .message {
 main .right .label-score {
   margin-bottom: 1rem;
 }
+
+/* Matched Guess */
+.guess-placeholder.matched-guess {
+  width: 18rem;
+  right: 42.2%;
+}
+
+body.matched-guess {
+  background-color: hsla(106.11deg, 43.2%, 49.02%);
+}
+
+body.lose {
+  background-color: hsl(0deg, 77.1%, 47.21%);
+}
+
+body.start {
+  background-color: hsl(0deg, 0%, 13.33%);
+}
