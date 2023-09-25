@@ -4,7 +4,7 @@ Welcome to my number guessing game!
 
 # Tricks
 
-"Escape" and "Enter" keyword used
+You can use "Escape" and "Enter" keyword
 
 # Game Photo
 
