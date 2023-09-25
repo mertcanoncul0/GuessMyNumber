@@ -1,10 +1,10 @@
 # GuessMyNumber
 
-Sayı Tahmin Oyununa Hoş geldiniz!
+Welcome to my number guessing game!
 
 # Tricks
 
-"Escape" ve "Enter" Tuşlarını Kullanabilirsiniz
+"Escape" and "Enter" keyword used
 
 # Game Photo
 
