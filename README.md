@@ -1,10 +1,6 @@
 # GuessMyNumber
 
-Sayı Tahmin Oyununa Hoş geldiniz!
-
-# Tricks
-
-"Escape" ve "Enter" Tuşlarını Kullanabilirsiniz
+- If you want to review &rarr; [live](https://mertcanoncul0.github.io/GuessMyNumber/)
 
 # Game Photo
 
